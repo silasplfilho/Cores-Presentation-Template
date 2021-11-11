@@ -43,7 +43,8 @@
 \usepackage[absolute,overlay]{textpos}
 
 \usepackage[utf8]{inputenc}
-\usepackage[english]{babel}
+% \usepackage[english]{babel}
+\usepackage[portuguese]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{helvet}
 
@@ -55,7 +56,7 @@
 %% e.g. using Carlito and Caladea
 % \usepackage{carlito}
 % \usepackage{caladea}
-\usepackage{zi4}
+% \usepackage{zi4}
 
 %% e.g. using Venturis ADF Serif and Sans
 % \usepackage{venturis}
@@ -70,28 +71,32 @@
 }
 
 %-------------------------------------------------------
+
 % INFORMATION IN THE TITLE PAGE
 %-------------------------------------------------------
 
-\title[] % [] is optional - is placed on the bottom of the sidebar on every slide
+\title[Aplicando DSR na identificação de Sintomas de Depressão em Mídias Sociais] % [] is optional - is placed on the bottom of the sidebar on every slide
 { % is placed on the title page
-      \textbf{The Feather Beamer Theme}
+      \Large{\textbf{Aplicando DSR na identificação de }\\ 
+      \textbf{Sintomas de Depressão em Mídias Sociais}}
+% \hspace*{5pt} 
 }
 
-\subtitle[The Feather Beamer Theme]
+\subtitle[]
 {
-      \textbf{v. 1.1.0}
+      \textbf{}
 }
 
-\author[Lilyana Vankova]
-{      Lilyana Vankova \\
-      {\ttfamily lilqna.v@gmail.com}\\
+\author[Silas P. Lima Filho]
+{      {Silas P. Lima Filho \hspace{50pt} Monica F. da Silva \hspace{50pt} Jonice Oliveira}\\
+      {\ttfamily \hspace*{-10pt}silaslfilho@ppgi.ufrj.br \hspace{12pt} monica@ppgi.ufrj.br  \hspace{25pt}jonice@dcc.ufrj.br}
 }
 
 \institute[]
 {%
-      Faculty of Mathematics, Informatics and Information Technologies\\
-      Plovdiv University ``Paisii Hilendarski''
+      Programa de Pós-Graduação em Informática\\
+      Instituto de Matemática\\
+      Universidade Federal do Rio de Janeiro
 }
 
 \date{\today}
@@ -122,11 +127,11 @@
         \begin{textblock*}{\textwidth}(.3cm, 3.8cm)
             {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
             \begin{beamercolorbox}[sep=8pt, 
-                                  %  left, 
-                                   colsep=-4bp, 
+                                   left, 
+                                  colsep=-4bp, 
                                   rounded=true, 
                                   shadow=true]{title}
-            \usebeamerfont{title}
+            % \usebeamerfont{title}
             \inserttitle
             \par%
                 \ifx
@@ -171,162 +176,165 @@
 % \end{frame}}
 
 
-\begin{frame}{Content}{}
-\tableofcontents
+% \begin{frame}{Content}{}
+% \tableofcontents
+% \end{frame}
+
+%-------------------------------------------------------
+
+
+% \begin{frame}{Referencial de DSR}
+%   \begin{block}{}
+%     Segundo Peffers\cite{Peffers2007}: "This process is structured in a nominally sequential order; however, there is no expectation that researchers would always proceed in sequential order from activity 1 through activity 6. In reality, they may actually start at almost any step and move outward. A problem-centered approach is the basis of the nominal sequence, starting with activity 1. Researchers might proceed in this sequence if the idea for the research resulted from observation of the problem or from suggested future research in a paper from a prior project. An objective-centered solution, starting with activity 2, could be triggered by an industry or research need that can be addressed by developing an artifact. A design- and development-centered approach would start with activity 3. It would result from the existence of an artifact that has not yet been formally thought through as a solution for the explicit problem domain in which it will be used."
+%   \end{block}
+% \end{frame}
+
+
+\section{Referencial de DSR}
+\begin{frame}{Referencial}
+  \begin{figure}
+    \centering
+    \includegraphics[scale=.25]{Graphics/Pimentel_DSR_Model.png}
+    \caption{Modelo DSR proposto por \cite{Pimentel2020}.}
+  \end{figure}
 \end{frame}
 
-%-------------------------------------------------------
-\section{Introduction}
-%-------------------------------------------------------
-\subsection{License}
-\begin{frame}{Introduction}{License}
-%-------------------------------------------------------
+\section{Estrutura da Pesquisa}
+\begin{frame}{Estrutura da Pesquisa}{}
+  \textbf{\large Contexto}
 
-  \begin{itemize}
-    \item<1-> The Feather image is not covered by copyright rules. I have used the image from \chref{http://www.vectors-free.com/}{http://www.vectors-free.com/}. You are allowed to use the Feather image for any purposes.
-    \item<2-> The rest of the theme is provided under the GNU General Public License v. 3 (GPLv3) \chref{http://www.gnu.org/licenses/}{http://www.gnu.org/licenses/}. This means that you can redistribute it and/or modify it under the same license. 
-  \end{itemize}
-\end{frame}
-
-%-------------------------------------------------------
-\section{Installation}
-%-------------------------------------------------------
-\subsection{Source files}
-\begin{frame}{Installation}{Source files}
-%-------------------------------------------------------
-
-\begin{block}{}
-The theme contains 4 source files:
-  \begin{itemize}
-    \item {\tt beamercolorthemeFeather.sty}
-    \item {\tt beamerouterthemeFeather.sty}
-    \item {\tt beamerinnerthemeFeather.sty}
-    \item {\tt beamerthemeFeather.sty}
-  \end{itemize}
-\end{block}
-\end{frame}
-
-%-------------------------------------------------------
-\subsection{Local and Global installation}
-\begin{frame}{Installation}{Local and Global installation}
-%-------------------------------------------------------
-  The theme can be installed for \textbf{local} or \textbf{global} use.
-  \pause
-  \begin{block}{Local Installation}
-  \begin{itemize}    
-    \item Local installation is the simplest way of installing the theme. 
-    \item You need to placing the 4 source files in the same folder as your presentation. When you download the theme, the 4 theme files are located in the {\tt local} folder.
-  \end{itemize}
-  \end{block}
-
-  \begin{block}{Global Installation}
-  \begin{itemize}
-     \item If you wish to make the theme globally available, you must put the files in your local latex directory tree. The location of the root of the local directory tree depends on your operating system and the latex distribution. 
-     \item Detailed steps on how to proceed installation under various operating systems can be found at Beamer documentation.
-  \end{itemize}
+  \begin{block}{}
+    Saúde mental tem sido discutida em diferentes círculos sociais e diferentes mídias. Infelizmente, diferentes grupos sociais, econômicos e étnicos são afetados pela falta de cuidados e tratamento de saúde mental. Depressão é uma das doenças mentais mais relacionadas no mundo. Com a disseminação e com mais pessoas com depressão, torna-se um desafio identificar uma pessoa, ou população que pode estar em um estado real de depressão.
   \end{block}
 \end{frame}
-     
 
-%-------------------------------------------------------
-\subsection{Required Packages}
-\begin{frame}{Installation}{Required Packages}
-%-------------------------------------------------------
+\begin{frame}{Estrutura da Pesquisa}{}
+  \textbf{\large Problema e Caracterização}
 
-  For using the Feather Theme you will need the Bemaer class installed and the following 2 packages
-  \begin{itemize}
-    \item TikZ\footnote{TikZ is a package for creating beautiful graphics. Have a look at these \chref{http://www.texample.net/tikz/examples/}{online examples} or the \chref{http://tug.ctan.org/tex-archive/graphics/pgf/base/doc/generic/pgf/pgfmanual.pdf}{pgf user manual}.}
-    \item calc
-  \end{itemize}
-  Due to the fact that the packages are very common they should be included in your latex distribution in the first place.
-\end{frame}
-
-%-------------------------------------------------------
-\section{User Interface}
-\subsection{Loading the Theme and Theme Options}
-\begin{frame}{User Interface}{Loading the Theme and Theme Options}
-%-------------------------------------------------------
-
-  \begin{block}{The Presentation Theme}
-    The Feather Theme can be loaded in a familiar way. In the reamble of your {\tt tex} file you must type\\ \vspace{5pt} 
-    {\tt \textbackslash usetheme[<options>]\{Feather\}}\\ \vspace{5pt} 
-    The presentation theme loads the inner, outer and color Feather theme files and passes the {\tt <options>} on to these files.
-  \end{block}
-  \begin{block}{The Inner and Outher Themes}
-    If you wish you can load only the inner, or the outher theme directly by\\ \vspace{5pt} 
-    {\tt \textbackslash useinnertheme\{Feather\}} (and it has no options)\\ \vspace{5pt} 
-    {\tt \textbackslash useoutertheme[<options>]\{Feather\}} (it has one option)\\
-    \hspace{20pt}{\tt progressstyle=\{fixedCircCnt or movingCircCnt\}} \\
+  \begin{block}{}
     \begin{itemize}
-    \item which set how the progress is illustrated;
-    \item the value {\tt movingCircCnt} is the default.
+      \item Uma vez que o conhecimento da revisão da literatura tem apresentado uma fraca colaboração entre a informática e a psicologia, destaca-se que nem sempre é levado em consideração como profissionais inferem se alguém é depressivo ou não. Como um dos sintomas da depressão é a inatividade, um usuário depressivo pode não gerar conteúdo online de forma consistente. 
+    
+      \item Como o contexto da psicologia lida regularmente com a subjetividade da informação, espera-se que informações relevantes podem ser extraídas de outros métodos, em vez de apenas conteúdo textual. Acreditamos que a classificação de potenciais usuários depressivos poderia ser mais confiável se combinada com ``informações subjetivas''.
+    \end{itemize}
+  \end{block}
+
+  % \begin{block}{}
+  %   Uma vez que o conhecimento da revisão da literatura tem apresentado uma fraca colaboração entre a informática e a psicologia, as contribuições esperadas estão relacionadas a essas duas áreas de pesquisa. Para criar um artefato útil, enfrenta diferentes estágios que podem oferecer desafios de pesquisa a serem realizados. Como o produto final é a habilidade de identificar sintomas de depressão, devemos passar por etapas como obter, processar, modelar e persistir os dados de sites de redes sociais em uma estrutura que possa permitir as próximas etapas para recuperar esses dados para análises futuras. Nosso método visa identificar um usuário depressivo inserido em uma rede social de forma confiável, consistente e discreta.
+  % \end{block}
+\end{frame}
+
+
+\begin{frame}{Estrutura da Pesquisa}{}
+  
+  \textbf{\large Conjecturas Teóricas}
+  
+  \begin{block}{}
+    \begin{itemize}
+      \item Revisão Literatura - Busca por conceitos e construtos relacionados ao contexto.
+      \item Revisão Sistemática da Literatura - Busca pelo atual estado da arte.
+    \end{itemize}
+  \end{block}
+  % \normalsize
+  \begin{block}{}
+    \begin{itemize}
+      \item[\textbullet] Análise de Redes Sociais - Técnicas de monitoramento
+      \item[\textbullet] Conceitos Depressão - \cite{american2013diagnostic}
+      \item[\textbullet] Reconhecimento de Padrões - \cite{Nolasco2016}
+    \end{itemize}
+  \end{block}
+    % Após uma primeira iteração utilizando revisão sistemática da literatura, selecionamos artigos com contribuições na área de inteligência artificial, especificamente em soluções de aprendizado de máquina e deep learning. Destes trabalhos, podemos extrair diferentes abordagens como: identificar quais sintomas são encontrados nas redes sociais e irão compor um modelo como features; criação de um modelo de classificação de um potencial depressivo.
+   
+    % Com as contribuições identificadas na literatura, extraímos os recursos utilizados nesses trabalhos. Com uma espécie de investigação em soluções computacionais para a identificação prévia de grupos populacionais depressivos, é intrigante saber se essas contribuições são de fato práticas para especialistas no domínio. Não apenas prático, mas se as informações e dados empregados são relevantes em um cenário real de diagnóstico clínico de depressão.
+
+    % O problema de lidar com a depressão e as redes sociais pode ser entendido como uma busca por pessoas que sofrem os sintomas da depressão.
+  
+    
+\end{frame}
+
+\begin{frame}{Estrutura da Pesquisa}{}
+
+  \textbf{\large Artefato}
+  \begin{block}{}
+    Criação de um modelo de classificação que leve em consideração não apenas características textuais, mas também subjetivas (temporais, comunidade e comportamentais). Propondo assim uma maior aproximação de uma identificação feita por um profissional.
+  \end{block}
+  
+  \textbf{\large Estado da Técnica}
+  \begin{block}{}
+      \begin{itemize}
+        \item Uso de características textuais - LIWC
+        \item Redes Neurais Recorrentes
+        \item Refinamento(fine-tuning) de modelos
+      \end{itemize}
+  \end{block}
+\end{frame}
+
+
+\begin{frame}{Estrutura da Pesquisa}
+
+  \textbf{\large Avaliações*}
+  \begin{block}{Reaproveitamento das Perguntas de Pesquisa da RSL}
+    \begin{itemize}
+      \item Seria possivel identificar sintomas de doencas psicologicas por meio das midias sociais? 
+      \item Haveria uma forma de diagnosticar um distúrbio usando apenas informacoes das MS? 	
+      \item Seriam as MS's uteis para profissionais, psicologos etc? 	
+      \item Que tipos de tecnicas de analise poderiam ser utilizadas para tal? 	
+      \item Quais são os trabalhos existentes atuais que abordam depressão? 	
+      \item Quando e onde os trabalhos tem sido publicados? 	
+      \item Quão próximos da realidade um modelo de classificação pode ser? 
+    \end{itemize}
+  
+  \end{block}
+\end{frame}  
+
+
+\begin{frame}{Estrutura da Pesquisa}
+
+  \textbf{\large Avaliações*}
+  \begin{block}{}
+    \begin{itemize}
+      \item Estudo de caso com 3 psicólogos,
+      \item Survey com 49 profissionais da saúde
+    \end{itemize}
+  \end{block}
+\end{frame}  
+  % \begin{block}{Resultados}
+    
+  % \end{block}
+
+\begin{frame}{Estrutura da Pesquisa}
+  \textbf{\large Publicações}
+  \begin{block}{}
+    \begin{itemize}
+      \item WTDBD 2020
     \end{itemize}
   \end{block}
 \end{frame}
 
-\begin{frame}{User Interface}{Loading the Theme and Theme Options}
 
-  \begin{block}{The Color Theme}
-    Also you can load only the color theme by writing in the preamble of the {\tt tex} file 
-    
-    \vspace{5pt} 
-    
-    \begin{itemize}
-    \item {\tt \textbackslash usecolortheme\{Feather\}}
-    \end{itemize}
-    
-    \vspace{5pt}
-    
-    ...or to change the colors of the various elements in the theme
-    
-    \vspace{5pt} 
-    \begin{itemize}
-    \item Change the bar colors: \\    
-    {\tt \textbackslash \{Feather\}\{fg=<color>, bg=<color>\}}
-    
-    \vspace{2pt} 
-    
-    \item Change the color of the structural elements: \\    
-    {\tt \textbackslash setbeamercolor\{structure\}\{fg=<color>\}}
-    
-    \vspace{2pt} 
-    
-    \item Change the frame title text color:\\
-    {\tt \textbackslash setbeamercolor\{frametitle\}\{fg=<color>\}}
-    
-    \vspace{2pt} 
-    
-    \item Change the normal text color background:    
-    {\tt \textbackslash setbeamercolor\{normal text\}\{fg=<color>, bg=<color>\}}
-    \end{itemize}
-  \end{block}
+\begin{frame}
+  \begin{figure}
+    \centering
+    % \includegraphics[scale=.4]{Graphics/DSR_diagram.png}
+    \includegraphics[scale=.4]{Graphics/Instancia DSR.png}
+    \caption{Instanciação baseada no modelo de \cite{Pimentel2020}.}
+  \end{figure}
 \end{frame}
 
+% \begin{frame}{Avaliações para }
+  
+% \end{frame}
 
-%-------------------------------------------------------
-\subsection{Feather image}
-\begin{frame}{User Interface}{The Feather Background Image}
-%-------------------------------------------------------
 
-\begin{block}{The Feather Background Image}
-    \begin{itemize}
-    \item In Feather theme, the title page frame and the last frame have the Feather image as the background image. 
-    \item The Feather background image can be produced to any frame by wrating on the begining at the choosen frame the following
-    \end{itemize} 
-    
-    \vspace{5pt} 
-    
-  {\tt \{\textbackslash 1bg\\
-    \textbackslash begin\{frame\}[<options>]\{Frame Title\}\{Frame Subtitle\}\\
-    \ldots\\
-    \textbackslash end\{frame\}\}}
-\end{block}
+% {\1
+% \begin{frame}[plain,noframenumbering]
+%   \finalpage{Thank you for using Feather Beamer Theme!}
+% \end{frame}}
+\begin{frame}{Bibliografia}
+  \frametitle{Bibliografia}
+  \bibliographystyle{apalike}
+  \bibliography{bibliografia.bib}
+  
 \end{frame}
-
-
-{\1
-\begin{frame}[plain,noframenumbering]
-  \finalpage{Thank you for using Feather Beamer Theme!}
-\end{frame}}
 
 \end{document}

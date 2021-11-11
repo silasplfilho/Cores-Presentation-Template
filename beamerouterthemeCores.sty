@@ -131,9 +131,10 @@
     {
         \begin{beamercolorbox}[wd=1.0\paperwidth,ht=1.25ex,dp=1ex,left]{headfoot}
                 {\usebeamercolor[fg]{frametitle}\usebeamerfont{section in head/foot}\hspace*{3.5ex}
-                \insertshortauthor\ |\ 
-                \insertshorttitle
+                \insertshortauthor 
+                \hspace{90pt}\insertshorttitle
                 \insertshortsubtitle
+                \hspace{110pt} \insertframenumber | \inserttotalframenumber
                  }
         \end{beamercolorbox}
      }
@@ -208,13 +209,13 @@
 
 %% place the logo in the circle
 %% LLT: use customisable \logofile
-                \node at (logopos) {\includegraphics[width=\dimexpr \logoscale \beamer@logoradius * 2\relax]{\logofile}};
+                % \node at (logopos) {\includegraphics[width=\dimexpr \logoscale \beamer@logoradius * 2\relax]{\logofile}};
 
 %----------------------------------------------------------------------------------------------------------------------------------
 
 %% draw progress circle/bar
 
-                \ifx\beamer@progressstyle\beamer@progressmovingCircCnt% the circular counter with a moving counter
+                \ifx\beamer@progressstyle%\beamer@progressmovingCircCnt% the circular counter with a moving counter
 
 %----------------------------------------------------------------------------------------------------------------------------------
 
@@ -222,20 +223,20 @@
 %%% LLT: modified to discount unnumbered frames, and
 %%% make the arc go a complete circle at end of
 %%% presentation
-                \ifx\beamer@rotationcw\undefined% counterclockwise rotation
-                \pgfmathsetmacro{\effectivetotalframe}
-                {max(\inserttotalframenumber-\theunnumberedframe,1)}
-                \pgfmathsetmacro{\progress}{(\insertframenumber-\theunnumberedframe)/\effectivetotalframe*360};
-                \else% clockwise rotation
-                \pgfmathsetmacro{\progress}{(\insertframenumber-\theunnumberedframe)/\effectivetotalframe*(-360)}; 
-                \fi
+                % \ifx\beamer@rotationcw\undefined% counterclockwise rotation
+                % \pgfmathsetmacro{\effectivetotalframe}
+                % {max(\inserttotalframenumber-\theunnumberedframe,1)}
+                % \pgfmathsetmacro{\progress}{(\insertframenumber-\theunnumberedframe)/\effectivetotalframe*360};
+                % \else% clockwise rotation
+                % \pgfmathsetmacro{\progress}{(\insertframenumber-\theunnumberedframe)/\effectivetotalframe*(-360)}; 
+                % \fi
 
 %----------------------------------------------------------------------------------------------------------------------------------
 
 %% draw the arc
                 
-                \draw[color=Feather.bg,line width=0.2*\beamer@borderwidth] ([xshift=\beamer@counterradius] logopos)  arc[radius=\beamer@counterradius, start angle=0, end angle=\progress];
-                \fill[fill=Feather.bg] ([shift={(\progress:\beamer@counterradius)}] logopos) circle (0.25\beamer@borderwidth);
+                % \draw[color=Feather.bg,line width=0.2*\beamer@borderwidth] ([xshift=\beamer@counterradius] logopos)  arc[radius=\beamer@counterradius, start angle=0, end angle=\progress];
+                % \fill[fill=Feather.bg] ([shift={(\progress:\beamer@counterradius)}] logopos) circle (0.25\beamer@borderwidth);
 
 %----------------------------------------------------------------------------------------------------------------------------------
 
@@ -249,23 +250,23 @@
 
 %% draw the current frame number
 
-                \ifx\beamer@rotationcw\undefined % counterclockwise rotation
-                \pgfmathsetmacro{\progress}{360*\insertframestartpage};
-                else% clockwise rotation
-                \pgfmathsetmacro{\progress}{-360*\insertframestartpage};
-                \fi
+                % \ifx\beamer@rotationcw\undefined % counterclockwise rotation
+                % \pgfmathsetmacro{\progress}{360*\insertframestartpage};
+                % else% clockwise rotation
+                % \pgfmathsetmacro{\progress}{-360*\insertframestartpage};
+                % \fi
 
 %----------------------------------------------------------------------------------------------------------------------------------
 
 %% draw the arc
 
-                \draw[color=Feather.bg,line width=0.5*\beamer@borderwidth] ([xshift=\beamer@counterradius] logopos) arc (0:\progress:\beamer@counterradius);
+                % \draw[color=Feather.bg,line width=0.5*\beamer@borderwidth] ([xshift=\beamer@counterradius] logopos) arc (0:\progress:\beamer@counterradius);
 
 %----------------------------------------------------------------------------------------------------------------------------------
 
 %% place the current frame number
 
-                % \node[fill=normal text.bg,draw=Feather.fg,circle,thick,minimum width=2*\beamer@borderwidth] at ([shift={(\progress:\beamer@counterradius)}] logopos) {{\usebeamercolor[fg]{normal text}\insertframenumber}};
+                \node[fill=normal text.bg,draw=Feather.fg,circle,thick,minimum width=2*\beamer@borderwidth] at ([shift={(\progress:\beamer@counterradius)}] logopos) {{\usebeamercolor[fg]{normal text}\insertframenumber}};
                 \fi
     }
         \end{tikzpicture}
